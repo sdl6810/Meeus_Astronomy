@@ -5,6 +5,9 @@ import openpyxl as xl
 from openpyxl import load_workbook
 from datetime import datetime, date
 
+#All loops in the code have been increased by one except the A[] values because Python does not include the last value in thr process.
+#8/16/2023
+
 _date = date.today()
 
 def eccentricity(T):
@@ -199,7 +202,7 @@ def determineLunarPhase(month,day,year,decimal):
 	return jde
 
 def main():
-	jdPhases = determineLunarPhase(8,10,2023,0)
+	jdPhases = determineLunarPhase(8,16,2023,0.25)
 	print(toGregorian(jdPhases))
 
 main()

@@ -53,7 +53,7 @@ def earthMoonDistance(m,d,y):
 
 	args = furtherArguments(t)
 
-	earthBk = load_workbook('/home/sdl5384/Desktop/Astronomy/earthMoonData.xlsx')
+	earthBk = load_workbook('/home/sdl5384/Desktop/Python_SRC/Astronomy/earthMoonData.xlsx')
 
 	lunarData = earthBk['LBR_Moon']
 
@@ -138,11 +138,11 @@ def periApo(year):
 	F = round(reduceAngle(round(316.6109 + 364.5287911*k - 0.0125053*(T*T) - 0.0000148*(T*T*T),4)),4)
 
 	sum_corrections = 0.0
-	coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Astronomy/lunar_phases.xlsx','periApo','B',0)
-	d_coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Astronomy/lunar_phases.xlsx','periApo','C',0)
-	f_coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Astronomy/lunar_phases.xlsx','periApo','D',0)
-	m_coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Astronomy/lunar_phases.xlsx','periApo','E',0)
-	t_coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Astronomy/lunar_phases.xlsx','periApo','F',0)
+	coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Python_SRC/Astronomy/lunar_phases.xlsx','periApo','B',0)
+	d_coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Python_SRC/Astronomy/lunar_phases.xlsx','periApo','C',0)
+	f_coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Python_SRC/Astronomy/lunar_phases.xlsx','periApo','D',0)
+	m_coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Python_SRC/Astronomy/lunar_phases.xlsx','periApo','E',0)
+	t_coeffs = importXlColumnToPythonList('/home/sdl5384/Desktop/Python_SRC/Astronomy/lunar_phases.xlsx','periApo','F',0)
 
 	for i in range(0,len(coeffs)):
 		sum_corrections = sum_corrections + coeffs[i]*math.sin(d_coeffs[i]*D+f_coeffs[i]*F+m_coeffs[i]*M+t_coeffs[i]*T)
@@ -150,15 +150,18 @@ def periApo(year):
 	jde = jde + sum_corrections
 	return jde	
 
-def main():
-	m = 7
-	d = 18
-	y = 2023
-	yearWithDecimal = 2023 +
-	numberOfYears = 15
-	for i in range(0,365):
-		jd = julianDay()
-		litFraction = illuminatedFraction(jd)
-	print(litFraction)
+# def main():
+# 	m = 8
+# 	d = 16
+# 	y = 2023
+# 	dates = []
+# 	# timeSinceNewYears = daysSinceNewYears(7,20,2023)
+# 	# yearWithDecimal = year + timeSinceNewYears
+# 	# numberOfYears = 15
+# 	for i in range(0,1000):
+# 		# yearWithDecimal = 2023 + daysSinceNewYears(7,)
+# 		jd = julianDay(7,20,2023)
+# 		litPart = illuminatedFraction(jd+1)
+# 		print(litPart)
 
-main()
+# main()

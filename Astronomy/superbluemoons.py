@@ -39,13 +39,13 @@ def generateColumnData(iterations,julianDate):
 		sht['E'+str(3+i)] = printPeriApoDate
 		sht['G'+str(3+i)] = earthMoonDistance(month,day+29.53059*i,year)
 		sht['H'+str(3+i)] = round(abs(sht['B'+str(3+i)].value - sht['D'+str(3+i)].value),3)
-	wbk.save('/home/sdl5384/Desktop/Astronomy/Super Blue Moons.xlsx')
+	wbk.save('/home/sdl5384/Desktop/Python_SRC/Astronomy/Super Blue Moons.xlsx')
 
 def main():
-	month = 7
-	day = 13
+	month = 8
+	day = 16
 	year = 2023
 
-	generateColumnData(2000,julianDay(month,day,year))
+	generateColumnData(100,julianDay(month,day,year))
 
 main()

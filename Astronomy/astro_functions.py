@@ -118,3 +118,9 @@ def determine_deltaT(m,d,y):
 		deltaT = deltaT + correction
 	else:
 		return 0
+
+def rightAscension(helioLattitude):
+	return None
+
+def declination(helioLongitude):
+	return None
